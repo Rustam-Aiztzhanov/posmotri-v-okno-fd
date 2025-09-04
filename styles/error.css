@@ -14,3 +14,6 @@
   text-align: center;
   text-transform: uppercase;
 }
+.result__video-container {
+  position: relative; /* родитель для .error и .preloader */
+}

@@ -1,3 +1,6 @@
+.result__video-container {
+  position: relative; /* родитель для абсолютного позиционирования */
+}
 .preloader {
   position: absolute;
   inset: 0;
