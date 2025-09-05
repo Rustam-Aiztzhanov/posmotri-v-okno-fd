@@ -17,6 +17,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  min-height: 100vh;
+  flex-direction: column;
+  min-height: 100vh; 
 }
 
 h1,
@@ -50,13 +53,18 @@ ol {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
 }
+/*Что бы растянуть на всю высоту окна браузера  */
+
+body {
+  height: 100%;
+}
+
 
 /* === Главный контейнер  === */
 .content {
   display: flex;
-  align-items: flex-end;
   gap: 30px;
-  max-height: 534px;
+  align-items: flex-end;
   margin-top: 133px;
   padding:0 30px ;
 }
@@ -65,13 +73,12 @@ ol {
 .result {
   display: flex;
   flex-direction: column;
-  inline-size: 711px;
- 
+  justify-content: flex-end;
 }
 
 /* === Контейнер для тега <video> === */
 .result__video-container {
-  inline-size: 711px;
+  display: block;
   block-size: 386px;
   margin-block-end: 16px;
   position: relative;
@@ -81,18 +88,18 @@ ol {
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-position: center;
   object-fit: cover;
-  
 }
 /* === Правая часть: заголовок + список видео-карточек === */
 .content__details {
   display: flex;
   flex-direction: column;
-  inline-size: 399px;
   block-size: 100%;
   gap: 26px;
-  justify-content: space-between;
- 
+  justify-content: flex-end; 
+  width: 399px;
+   flex-shrink: 0; 
 }
 /* === Общий класс для кнопок === */
 .button {
@@ -105,6 +112,7 @@ ol {
   cursor: pointer;
   padding:6px 73.5px;
   font-weight: 700;
+  appearance:none;
 }
 /* когда курсор наведен на кнопку — подчёркивать текст */
 .button:hover {
@@ -146,9 +154,9 @@ ol {
   inline-size: 100%;
   block-size: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
   position: relative;
   gap: 30px;
+  margin-top: auto;
 }
 
 /* === Список карточек видео === */
@@ -187,10 +195,6 @@ ol {
   cursor: pointer;       
 }
 
-/* === Текст подписи к полю === */
-.search-form__label-text {
-}
-
 /* === Класс для скрытия элементов, доступных только для скринридеров === */
 .visually-hidden {
   position: absolute;
@@ -226,10 +230,6 @@ ol {
   gap: 15px;
 }
 
-/* === Сам чекбокс (скрытый, визуально заменяется псевдочекбоксом) === */
-.search-form__checkbox {
-}
-
 /* === Визуальная имитация чекбокса (квадратик) === */
 .search-form__pseudo-checkbox {
   inline-size: 19px;
@@ -261,18 +261,6 @@ ol {
 /* === Акцентная часть заголовка (По-) === */
 .content__accent {
   color: #545050;
-}
-
-/* === Сам прелоадер (серый фон + анимация) === */
-.preloader {
-}
-
-/* === Контейнер квадратов-анимации прелоадера === */
-.preloader-chasing-squares {
-}
-
-/* === Один квадрат прелоадера === */
-.square {
 }
 
 /* === Один элемент списка (обёртка для карточки) === */
@@ -315,7 +303,8 @@ ol {
   display: flex;
   align-items: flex-start;
   gap: 10px;
- 
+  width: 100%;
+  overflow: hidden;  
 }
 
 /* === Контейнер с описанием видео (заголовок + текст) === */
@@ -346,10 +335,11 @@ ol {
 
 /* === Миниатюра (превью) видео === */
 .content__video-card-thumbnail {
-  inline-size: 194px;
-  block-size: 103px;
-  object-fit: cover;
-  object-position: center;
+   display:block;
+  inline-size:194px;
+  block-size:103px;
+  object-fit:cover;
+  object-position:center;
 }
 
 /* === Кнопка «Показать ещё» === */
@@ -360,10 +350,3 @@ ol {
   width:99%;
 }
 
-/* === Блок ошибки (серый фон + текст) === */
-.error {
-}
-
-/* === Текст ошибки === */
-.error__title {
-}
