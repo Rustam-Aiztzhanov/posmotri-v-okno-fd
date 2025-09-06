@@ -19,6 +19,8 @@ html {
   background-color: #1b1919;
   min-height: 100vh;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh; 
 }
 
@@ -53,20 +55,19 @@ ol {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
 }
-/*Что бы растянуть на всю высоту окна браузера  */
 
+/*Что бы растянуть на всю высоту окна */
 body {
   height: 100%;
 }
-
 
 /* === Главный контейнер  === */
 .content {
   display: flex;
   gap: 30px;
   align-items: flex-end;
-  margin-top: 133px;
   padding:0 30px ;
+  justify-content: center;
 }
 
 /* === Левая часть: блок с видео и формой поиска === */
@@ -101,7 +102,7 @@ body {
   width: 399px;
    flex-shrink: 0; 
 }
-/* === Общий класс для кнопок === */
+/* === Общий класс для кнопок === */          
 .button {
   display: flex;
   border: 1px solid #fff;
@@ -114,12 +115,15 @@ body {
   font-weight: 700;
   appearance:none;
 }
+
 /* когда курсор наведен на кнопку — подчёркивать текст */
 .button:hover {
   text-decoration: underline;
 }
+
 /* когда по кнопке нажали (активное состояние) — фон становится серым */
 .button:active {
+  text-decoration: none;
   background-color: #545050;
 }
   /* при получении фокуса (например, табом) — убрать стандартную рамку браузера */
@@ -166,13 +170,13 @@ body {
   gap: 30px;
 }
 
-
 /* === Форма поиска (Город + Время суток + кнопка) === */
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
+  font-weight: 700;
 }
 
 /* === Группа полей в форме === */
@@ -220,6 +224,25 @@ body {
   font-size: 18px;
 }
 
+/* Убираем стандартную браузерную обводку при фокусе
+  (для текстового поля, карточек и кнопок) */
+.search-form__textfield:focus,
+.button:focus,
+.content__card-link:focus {
+  outline: none;
+}
+
+/* Стили фокуса для поля поиска: белая рамка + синяя внутренняя */
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;            
+  outline-offset: 0;
+  border-radius: 3px;                  
+  box-shadow: inset 0 0 0 2px #007BFF;  
+  background-color: transparent;      
+  color: #fff;                         
+}
+
+/* Полупрозрачный белый текст для placeholder в поле поиска */
 .search-form__textfield::placeholder {
   color: rgb(255 255 255 / 0.7);
 }
@@ -256,6 +279,7 @@ body {
 /* При наведении на label подчёркиваем текст */
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+  text-decoration: none;
 }
 
 /* === Акцентная часть заголовка (По-) === */
@@ -275,6 +299,7 @@ body {
   color: #fff;
   text-decoration-skip-ink: none;
 }
+
 /* При наведении на карточку делаем подчёркивание текста */
 .content__card-link:hover {
   text-decoration: underline;
@@ -282,8 +307,10 @@ body {
 
 /* При активном состоянии (удержание кнопки мыши) фон поменяется  */
 .content__card-link:active {
+  text-decoration: none;
   background-color: #545050;
 }
+
 /* Для текущей (выбранной) карточки — такой же серый фон постоянно */
 .content__card-link_current {
   background-color: #545050;
@@ -293,6 +320,7 @@ body {
 .content__card-link:focus {
   outline: none;
 }
+
 /* Добавляем  рамку при фокусе с клавиатуры */
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
@@ -313,6 +341,7 @@ body {
   flex-direction: column;
   flex-grow: 1;
   gap: 6px;
+  min-width: 0;    
 }
 
 /* === Заголовок карточки видео === */
@@ -324,6 +353,8 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;   
+  text-overflow: ellipsis;  
 }
 
 /* === Описание карточки видео === */
@@ -331,6 +362,8 @@ body {
   font-size: 18px;
   line-height: 16.2px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* === Миниатюра (превью) видео === */
@@ -340,13 +373,20 @@ body {
   block-size:103px;
   object-fit:cover;
   object-position:center;
+  flex-shrink: 0; 
 }
 
-/* === Кнопка «Показать ещё» === */
+/* === Кнопка «Показать ещё» === */ 
 .more-button {
   display: inline-block;          
   padding: 6px 20px; 
   text-decoration-skip-ink: none;    
   width:99%;
 }
+
+
+
+
+
+
 
