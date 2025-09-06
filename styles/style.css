@@ -100,7 +100,7 @@ body {
   gap: 26px;
   justify-content: flex-end; 
   width: 399px;
-   flex-shrink: 0; 
+  flex-shrink: 0; 
 }
 /* === Общий класс для кнопок === */          
 .button {
