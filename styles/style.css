@@ -102,46 +102,6 @@ body {
   width: 399px;
   flex-shrink: 0; 
 }
-/* === Общий класс для кнопок === */          
-.button {
-  display: flex;
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  font-family: inherit;
-  font-size: 18px;
-  cursor: pointer;
-  padding:6px 73.5px;
-  font-weight: 700;
-  appearance:none;
-}
-
-/* когда курсор наведен на кнопку — подчёркивать текст */
-.button:hover {
-  text-decoration: underline;
-}
-
-/* когда по кнопке нажали (активное состояние) — фон становится серым */
-.button:active {
-  text-decoration: none;
-  background-color: #545050;
-}
-  /* при получении фокуса (например, табом) — убрать стандартную рамку браузера */
-.button:focus {
-  outline: none;
-}
- /* заменил стандартный фокус  */
-.button:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 2px;
-}
-
-/* === Кнопка «Найти» в форме === */
-.search-form__submit-button {
-  inline-size: 194px;
-  block-size: 34px;
-  align-self: flex-end;
-}
 
 /* === Заголовок «Посмотри в окно» === */
 .title {
@@ -176,7 +136,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* === Группа полей в форме === */
@@ -230,6 +190,7 @@ body {
 .button:focus,
 .content__card-link:focus {
   outline: none;
+  box-shadow: none;
 }
 
 /* Стили фокуса для поля поиска: белая рамка + синяя внутренняя */
@@ -237,7 +198,6 @@ body {
   outline: 1px solid #fff;            
   outline-offset: 0;
   border-radius: 3px;                  
-  box-shadow: inset 0 0 0 2px #007BFF;  
   background-color: transparent;      
   color: #fff;                         
 }
@@ -274,6 +234,11 @@ body {
 /* Когда чекбокс отмечен — показываем «внутренний квадратик» */
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   opacity: 1;
+}
+/* рамка для утро,день,ночь*/ 
+.search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
+  outline: 1px solid #fff; /* рамка как в макете */
+  outline-offset: 2px;      /* чуть отступает от квадратика */
 }
 
 /* При наведении на label подчёркиваем текст */
@@ -374,6 +339,47 @@ body {
   object-fit:cover;
   object-position:center;
   flex-shrink: 0; 
+}
+
+/* === Общий класс для кнопок === */          
+.button {
+  display: flex;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  padding:6px 73.5px;
+  font-weight: 700;
+  appearance:none;
+}
+
+/* когда курсор наведен на кнопку — подчёркивать текст */
+.button:hover {
+  text-decoration: underline;
+}
+
+/* когда по кнопке нажали (активное состояние) — фон становится серым */
+.button:active {
+  text-decoration: none;
+  background-color: #545050;
+}
+  /* при получении фокуса (например, табом) — убрать стандартную рамку браузера */
+.button:focus {
+  outline: none;
+}
+ /* заменил стандартный фокус  */
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* === Кнопка «Найти» в форме === */
+.search-form__submit-button {
+  inline-size: 194px;
+  block-size: 34px;
+  align-self: flex-end;
 }
 
 /* === Кнопка «Показать ещё» === */ 
