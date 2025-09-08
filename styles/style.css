@@ -185,7 +185,7 @@ body {
   color: #fff;
   font-family: inherit;
   font-size: 18px;
-}
+} 
 
 /* Убираем стандартную браузерную обводку при фокусе
   (для текстового поля, карточек и кнопок) */
@@ -198,11 +198,9 @@ body {
 
 /* Стили фокуса для поля поиска: белая рамка  */
 .search-form__textfield:focus-visible {
-  outline: 1px solid #fff;            
-  outline-offset: 0;
-  border-radius: 3px;                  
-  background-color: transparent;      
-  color: #fff;                         
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 4px;                       
 }
 
 /* Полупрозрачный белый текст для placeholder в поле поиска */
@@ -238,21 +236,23 @@ body {
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
+
 /* рамка для утро,день,ночь*/ 
 .search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
-  outline: 1px solid #fff; /* рамка как в макете */
-  outline-offset: 2px;      /* чуть отступает от квадратика */
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 4px;    
 }
 
 /* При наведении на label подчёркиваем текст */
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
+
 /* Обводка вокруг утро день ночь */
 .search-form__label:focus-within {
-  outline: 2px solid #fff;
-  outline-offset: 4px;    
-  border-radius: 6px;      
+  outline:none;
 }
 
 /* === Акцентная часть заголовка (По-) === */
@@ -379,8 +379,9 @@ body {
 }
  /* заменил стандартный фокус  */
 .button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 2px solid #fff;
   outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* === Кнопка «Найти» в форме === */
