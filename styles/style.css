@@ -10,6 +10,8 @@ html {
 
 .page {
   display: flex;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -136,8 +138,8 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  font-weight: 400;
 }
+ 
 
 /* === Группа полей в форме === */
 .search-form__fieldset {
@@ -148,6 +150,7 @@ body {
 .search-form__fieldset-title {
   font-size: 18px;
   margin-block-end: 5px;
+  font-weight: 400;
 }
 
 /* === Обёртка для инпутов/чекбоксов с текстом === */
@@ -193,7 +196,7 @@ body {
   box-shadow: none;
 }
 
-/* Стили фокуса для поля поиска: белая рамка + синяя внутренняя */
+/* Стили фокуса для поля поиска: белая рамка  */
 .search-form__textfield:focus-visible {
   outline: 1px solid #fff;            
   outline-offset: 0;
@@ -244,7 +247,12 @@ body {
 /* При наведении на label подчёркиваем текст */
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
-  text-decoration: none;
+}
+/* Обводка вокруг утро день ночь */
+.search-form__label:focus-within {
+  outline: 2px solid #fff;
+  outline-offset: 4px;    
+  border-radius: 6px;      
 }
 
 /* === Акцентная часть заголовка (По-) === */
@@ -333,7 +341,7 @@ body {
 
 /* === Миниатюра (превью) видео === */
 .content__video-card-thumbnail {
-   display:block;
+  display:block;
   inline-size:194px;
   block-size:103px;
   object-fit:cover;
