@@ -198,9 +198,7 @@ body {
 
 /* Стили фокуса для поля поиска: белая рамка  */
 .search-form__textfield:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-  border-radius: 4px;                       
+  outline: 1px solid #fff;                
 }
 
 /* Полупрозрачный белый текст для placeholder в поле поиска */
@@ -237,12 +235,7 @@ body {
   opacity: 1;
 }
 
-/* рамка для утро,день,ночь*/ 
-.search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-  border-radius: 4px;    
-}
+
 
 /* При наведении на label подчёркиваем текст */
 .search-form__label:hover .search-form__label-text {
@@ -252,7 +245,7 @@ body {
 
 /* Обводка вокруг утро день ночь */
 .search-form__label:focus-within {
-  outline:none;
+ outline: 1px solid #fff;
 }
 
 /* === Акцентная часть заголовка (По-) === */
@@ -379,9 +372,8 @@ body {
 }
  /* заменил стандартный фокус  */
 .button:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 /* === Кнопка «Найти» в форме === */
